@@ -12,8 +12,11 @@ const app = express();
 const PORT = process.env.PORT || 7000;
 
 app.use(cors({
-  origin: 'http://localhost:3000' // Frontend URL
+  origin: ['http://localhost:3000', 'https://gregarious-kashata-22c859.netlify.app'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
 }));
+
 app.use(express.json());
 
 app.use('/api/users', authenticrouter);
