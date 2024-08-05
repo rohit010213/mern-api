@@ -12,7 +12,7 @@ const app = express();
 const PORT = process.env.PORT || 7000;
 
 app.use(cors({
-  origin: 'https://api-front-a0yd.onrender.com', // Your frontend URL
+  origin: 'https://api-front-cnqe.onrender.com', // Your frontend URL
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
