@@ -49,12 +49,15 @@ carrouter.get("/", verifyToken, async (req, res) => {
 
 carrouter.get("/:id", verifyToken, async (req, res) => {
     try {
+        console.log('Request received for car ID:', req.params.id); // Log request
         const car = await Car.findById(req.params.id);
         if (!car) {
+            console.log('Car not found'); // Log if car is not found
             return res.status(404).json({ error: 'Car not found' });
         }
         res.status(200).json(car);
     } catch (error) {
+        console.error('Error retrieving car:', error); // Log error
         res.status(500).json({ error: 'Failed to retrieve car' });
     }
 });
