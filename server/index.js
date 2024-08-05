@@ -12,7 +12,8 @@ const app = express();
 const PORT = process.env.PORT || 7000;
 
 app.use(cors({
-  origin: ['http://localhost:3000', 'https://gregarious-kashata-22c859.netlify.app']
+  origin: ['http://localhost:3000', 'https://api-front-lv6m.onrender.com'], // Add your frontend URL here
+  credentials: true,
 }));
 
 app.use(express.json());
