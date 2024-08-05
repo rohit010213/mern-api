@@ -12,8 +12,9 @@ const app = express();
 const PORT = process.env.PORT || 7000;
 
 app.use(cors({
-  origin: ['http://localhost:3000', 'https://api-front-lv6m.onrender.com'], // Add your frontend URL here
-  credentials: true,
+  origin: 'https://api-front-lv6m.onrender.com', // Your frontend URL
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
 app.use(express.json());
